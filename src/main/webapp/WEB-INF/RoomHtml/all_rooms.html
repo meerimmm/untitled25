@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url(https://i8.photo.2gis.com/images/branch/32/4503599646196710_830f.jpg)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+<table class="table"
+       style="width: 500px; height: 300px; margin-top: 200px; margin-left: 300px">
+
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+        <th scope="col">SESSIONS</th>
+        <th scope="col">PLACES</th>
+        <th scope="col">RATING</th>
+
+        <th scope="col"><b style="color: darkblue"><a th:href="@{/room/save}"> ADD ROOM</a> </b></th>
+    </tr>
+    <tr th:each="room:${all_rooms}">
+        <td style="color: darkkhaki" th:text="${room.id}"></td>
+        <td style="color: darkkhaki" th:text="${room.name}"></td>
+        <td style="color: darkkhaki" th:text="${room.rating}"></td>
+
+        <td>
+            <a th:href="@{/room/delete_by_id/{id}(id=${room.getId()})}">
+                <button type="button" class="btn btn-outline-danger">Delete</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/room/update/{id}(id=${room.getId()})}">
+                <button type="button" class="btn btn-outline-success">Update</button>
+
+            </a>
+
+        </td>
+        <td>
+            <a th:href="@{/session/find_by_id/{ id}(id=${room.getId()})}">
+                <button type="button" class="btn btn-warning">Session</button>
+            </a>
+        </td>
+        <td>
+            <a th:href="@{/place/find_by_id/{ id}(id=${room.getId()})}">
+                <button type="button" class="btn btn-warning">Place</button>
+            </a>
+        </td>
+
+    </tr>
+    </thead>
+    <tbody>
+    <!--    <tr>-->
+    <!--        <th scope="row">1</th>-->
+    <!--        <td>Mark</td>-->
+    <!--        <td>Otto</td>-->
+    <!--        <td>@mdo</td>-->
+    <!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <th scope="row">2</th>-->
+    <!--        <td>Jacob</td>-->
+    <!--        <td>Thornton</td>-->
+    <!--        <td>@fat</td>-->
+    <!--    </tr>-->
+    <!--    <tr>-->
+    <!--        <th scope="row">3</th>-->
+    <!--        <td>Larry</td>-->
+    <!--        <td>the Bird</td>-->
+    <!--        <td>@twitter</td>-->
+    <!--    </tr>-->
+    <!--    </tbody>-->
+</table>
+</body>
