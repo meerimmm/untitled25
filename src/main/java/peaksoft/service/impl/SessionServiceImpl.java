@@ -4,19 +4,28 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
+import peaksoft.model.Room;
 import peaksoft.model.Session;
 import peaksoft.service.ServiceLayer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @Transactional
-public class SessionServiceImpl implements ServiceLayer<Session>{
+public class SessionServiceImpl implements ServiceLayer<Session> {
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
     public Session save(Session session) {
+        Room room = entityManager.find(Room.class, session.getRoomId());
+        List<Room> rooms = new ArrayList<>();
+        rooms.add(room);
+        List<Session> sessions = new ArrayList<>();
+        sessions.add(session);
+        room.setSessions(sessions);
+        session.setRooms(rooms);
         entityManager.persist(session);
         return session;
     }
@@ -48,4 +57,8 @@ public class SessionServiceImpl implements ServiceLayer<Session>{
         entityManager.remove(entityManager.find(Session.class, id));
     }
 
+    public List<Session> findAllId(int id) {
+        return entityManager.createQuery("select s from Session s join s.rooms r where r.id = :id", Session.class)
+                .setParameter("id", id).getResultList();
+    }
 }

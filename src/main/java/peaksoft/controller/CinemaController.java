@@ -14,11 +14,9 @@ import java.util.List;
 @RequestMapping("/cinema")
 public class CinemaController {
     private final CinemaServiceImpl cinemaService;
-    private final RoomServiceImpl roomService;
 
-    public CinemaController(CinemaServiceImpl cinemaService, RoomServiceImpl roomService) {
+    public CinemaController(CinemaServiceImpl cinemaService) {
         this.cinemaService = cinemaService;
-        this.roomService = roomService;
     }
 
 

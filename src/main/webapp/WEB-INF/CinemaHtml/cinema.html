@@ -2,19 +2,75 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>form login</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Title</title>
 </head>
-<body style="background-image: url(https://i8.photo.2gis.com/images/branch/32/4503599646196710_830f.jpg)">
+<body>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+<div class="jumbotron text-center" style="height: 300px">
+    <tr style="margin-bottom: 50px">
+        <th>
+            <img src="https://translator-school.com/storage/blogs/April2023/02-kak-stat-perevodchikom-filmov-i-serialov.jpg"
+                 class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px;">
+        </th>
 
-<div>
+
+        <th><img
+                src="https://gai-news.ru/imagesgai/aHR0cHM6Ly9zdG9yYWdlLnlhbmRleGNsb3VkLm5ldC9pbmNydXNzaWEtcHJvZC93cC1jb250ZW50L3VwbG9hZHMvMjAyMi8wOC9pU3RvY2stMTg4MDA3Nzk0LmpwZw=="
+                class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px;"></th>
+
+
+        <th><img src="https://i7.photo.2gis.com/images/branch/47/6614661959256629_f3cd.jpg"
+                 class="img-rounded" alt="Cinque Terre" style="width: 250px; height: 150px; "></th>
+
+
+        <th><img
+                src="https://abrakadabra.fun/uploads/posts/2021-12/1639594132_30-abrakadabra-fun-p-zastavki-filmov-32.jpg"
+                class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px; margin-bottom: 10px">
+        </th>
+
+        <th><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykk-eJ-h9X1WBlq4a9Ffb_pTNUMUq9mKYrHoKQJXsFOILW0FToR-NaQ_R3KYL5rEOC70&usqp=CAU"
+                class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px">
+        </th>
+<!--        <meta charset="utf-8">-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--        </head>-->
+<!--        <body>-->
+
+<!--        <div class="container">-->
+<!--            <h2>Justified Button Groups</h2>-->
+<!--            <p>To span the entire width of the screen, use the .btn-group-justified class:</p>-->
+<!--            <div class="btn-group btn-group-justified">-->
+<!--                <a th:href="@{/room/find_all}" class="btn btn-primary">ROOM</a>-->
+<!--                <a th:href="@{/movie/find_all}" class="btn btn-primary">MOVIE</a>-->
+<!--                <a th:href="@{/session/find_all}" class="btn btn-primary">SESSION</a>-->
+<!--                <a th:href="@{/place/find_all}" class="btn btn-primary">PLACE</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </body>-->
+    </tr>
+
+    <!--    <div class="btn-group" style="margin-left: 300px">-->
+    <!--        <button type="button" class="btn btn-default" th:href="@{/cinema/find_all}"><strong>AllCinemas</strong></button>-->
+    <!--        <button type="button" class="btn btn-default" th:href="@{/movie/find_all}"><strong>AllMovies</strong></button>-->
+    <!--        <button type="button" class="btn btn-default" th:href="@{/session/find_all}"><strong>AllSessions</strong>-->
+    <!--        </button>-->
+
+    <!--    </div>-->
+    <a th:href="@{/cinema/find_all}"><h2> CINEMA</h2></a>
+
+</div>
+
     <form
+
             th:object="${cinema}"
             th:method="post"
             th:action="@{/cinema/save_cinema}"
 
-            style="width: 500px; height: 300px; margin-top: 200px; margin-left: 300px">
+            style="width: 500px; height: 300px; margin-top: 10px; margin-left: 100px">
 
         <div class="form-group">
             <label for="exampleInputEmail1">cinema name</label>
@@ -29,13 +85,10 @@
                    class="form-control" id="exampleInputPassword3"
                    placeholder="address">
         </div>
-        <!--        <div class="form-group">                              -->
-        <!--            <label for="exampleInputPassword1">room</label>   -->
-        <!--            <input th:field="${cinema.rooms}" type="text" class="form-control" id="exampleInputPassword1"-->
-        <!--                   placeholder="rooms">                       -->
-        <!--        </div>                                                -->
+
         <input type="submit" value="Submit">
+
     </form>
-</div>
+
 </body>
 </html>

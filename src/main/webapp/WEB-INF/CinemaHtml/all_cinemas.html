@@ -4,48 +4,68 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-image: url(https://i8.photo.2gis.com/images/branch/32/4503599646196710_830f.jpg)">
+<body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
-<!--<div class="jumbotron text-center" style="height: 300px">-->
-<!--    <tr style="margin-bottom: 50px">-->
-<!--        <th> <img src="https://images.aif.by/007/555/1fa244fc7a4a0e1f67112359f6660366.jpg"-->
-<!--                  class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px;"></th>-->
+<div class="jumbotron text-center" style="height: 300px">
+    <tr style="margin-bottom: 30px">
+        <th>
+            <img src="https://translator-school.com/storage/blogs/April2023/02-kak-stat-perevodchikom-filmov-i-serialov.jpg"
+                 class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px;">
+        </th>
 
 
-<!--        <th> <img src="https://media.kudago.com/thumbs/l/images/list/19/8e/198e76ab4a007cccae6e2e5d2c7fa570.jpg"-->
-<!--                  class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px;"></th>-->
+        <th><img
+                src="https://gai-news.ru/imagesgai/aHR0cHM6Ly9zdG9yYWdlLnlhbmRleGNsb3VkLm5ldC9pbmNydXNzaWEtcHJvZC93cC1jb250ZW50L3VwbG9hZHMvMjAyMi8wOC9pU3RvY2stMTg4MDA3Nzk0LmpwZw=="
+                class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px;"></th>
 
 
-
-<!--        <th> <img src="https://sun9-52.userapi.com/impg/rjAb_0p4ZJbDPYuZvZZ7UjGBuJxQwVt5PCK-jQ/It5YKdZSUtM.jpg?size=807x567&quality=96&sign=a2af117f1ab4efa8b8faf96122ad1c91&type=album"-->
-<!--                  class="img-rounded" alt="Cinque Terre" style="width: 250px; height: 150px; "></th>-->
-
+        <th><img src="https://i7.photo.2gis.com/images/branch/47/6614661959256629_f3cd.jpg"
+                 class="img-rounded" alt="Cinque Terre" style="width: 250px; height: 150px; "></th>
 
 
-<!--        <th> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPp1k5vuRHL_Pijr_itSACvbo3MtgEU6ZBxVeHMUG9UDdEEp1NtEuIsXc5v9aanFY96k&usqp=CAU"-->
-<!--                  class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px; margin-bottom: 10px">-->
-<!--        </th>-->
+        <th><img
+                src="https://abrakadabra.fun/uploads/posts/2021-12/1639594132_30-abrakadabra-fun-p-zastavki-filmov-32.jpg"
+                class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px; margin-bottom: 10px">
+        </th>
 
-<!--        <th> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykk-eJ-h9X1WBlq4a9Ffb_pTNUMUq9mKYrHoKQJXsFOILW0FToR-NaQ_R3KYL5rEOC70&usqp=CAU"-->
-<!--                  class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px">-->
-<!--        </th>-->
+        <th><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykk-eJ-h9X1WBlq4a9Ffb_pTNUMUq9mKYrHoKQJXsFOILW0FToR-NaQ_R3KYL5rEOC70&usqp=CAU"
+                class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px">
+        </th>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        </head>
+        <body>
 
-<!--    </tr>-->
+        <div class="container">
+            <a th:href="@{/cinema/find_all}"><h2> CINEMA</h2></a>
+            <div class="btn-group btn-group-justified">
+                <a th:href="@{/room/find_all}" class="btn btn-primary">ROOM</a>
+                <a th:href="@{/movie/find_all}" class="btn btn-primary">MOVIE</a>
+                <a th:href="@{/session/find_all}" class="btn btn-primary">SESSION</a>
+                <a th:href="@{/place/find_all}" class="btn btn-primary">PLACE</a>
+            </div>
+        </div>
 
-<!--    <a th:href="@{/cinema/find_all}"><h2><strong>Buy Tickers In One Click</strong></h2></a>-->
-<!--    <p><small>All the latest movie premieres are waiting for you!</small></p>-->
+        </body>
+    </tr>
+</div>
+        </body>
 
-<!--    <div class="btn-group" style="margin-left: 1530px">-->
+
+<!--    <div class="btn-group" style="margin-left: 300px">-->
 <!--        <button type="button" class="btn btn-default" th:href="@{/cinema/find_all}"><strong>AllCinemas</strong></button>-->
 <!--        <button type="button" class="btn btn-default" th:href="@{/movie/find_all}"><strong>AllMovies</strong></button>-->
-<!--        <button type="button" class="btn btn-default" th:href="@{/session/find_all}"><strong>AllSessions</strong></button>-->
+<!--        <button type="button" class="btn btn-default" th:href="@{/session/find_all}"><strong>AllSessions</strong>-->
+<!--        </button>-->
 
 <!--    </div>-->
-
-
 </div>
 <table class="table"
-       style="width: 500px; height: 300px; margin-top: 200px; margin-left: 300px">
+       style="width: 500px; height: 300px; margin-top: 30px; margin-left: 100px">
 
     <thead>
     <tr>
@@ -71,32 +91,25 @@
 
         </td>
         <td>
-            <a th:href="@{/room/find_by_id/{id}(id=${cinema.getId()})}">
+            <a th:href="@{/room/findAllId/{id}(id=${cinema.id})}">
                 <button type="button" class="btn btn-warning">Room</button>
             </a>
         </td>
+
     </tr>
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--    </head>-->
+<!--    <body>-->
+
+<!--    <ul class="pager">-->
+<!--        <li class="next"><a href="#">Next</a></li>-->
+<!--    </ul>-->
     </thead>
     <tbody>
-<!--    <tr>-->
-<!--        <th scope="row">1</th>-->
-<!--        <td>Mark</td>-->
-<!--        <td>Otto</td>-->
-<!--        <td>@mdo</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <th scope="row">2</th>-->
-<!--        <td>Jacob</td>-->
-<!--        <td>Thornton</td>-->
-<!--        <td>@fat</td>-->
-<!--    </tr>-->
-<!--    <tr>-->
-<!--        <th scope="row">3</th>-->
-<!--        <td>Larry</td>-->
-<!--        <td>the Bird</td>-->
-<!--        <td>@twitter</td>-->
-<!--    </tr>-->
-<!--    </tbody>-->
+
 </table>
 </body>
 </html>

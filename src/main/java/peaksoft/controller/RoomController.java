@@ -8,6 +8,7 @@ import peaksoft.model.Cinema;
 import peaksoft.model.Room;
 import peaksoft.service.impl.CinemaServiceImpl;
 import peaksoft.service.impl.RoomServiceImpl;
+import peaksoft.service.impl.SessionServiceImpl;
 
 import java.util.List;
 
@@ -16,11 +17,13 @@ import java.util.List;
 public class RoomController {
     private final RoomServiceImpl roomService;
     private final CinemaServiceImpl cinemaService;
+    private final SessionServiceImpl sessionService;
 
     @Autowired
-    public RoomController(RoomServiceImpl roomService, CinemaServiceImpl cinemaService) {
+    public RoomController(RoomServiceImpl roomService, CinemaServiceImpl cinemaService, SessionServiceImpl sessionService) {
         this.roomService = roomService;
         this.cinemaService = cinemaService;
+        this.sessionService = sessionService;
     }
 
     @ModelAttribute("cinemaList")
@@ -50,11 +53,12 @@ public class RoomController {
         return "RoomHtml/all_rooms";
     }
 
-    @GetMapping("/find_by_id/{id}")
-    public String findById(@PathVariable int id, Model model) {
-        model.addAttribute("find_by_id", roomService.findById(id));
-        return "RoomHtml/find_by_id";
+    @GetMapping("/findAllId/{id}")
+    public String findAllId(@PathVariable("id") int id, Model model) {
+        model.addAttribute("all_room_id", roomService.findAllId(id));
+        return "RoomHtml/all_room_id";
     }
+
 
     @GetMapping("/update/{id}")
     public String update(Model model, @PathVariable int id) {
@@ -75,4 +79,5 @@ public class RoomController {
         roomService.deleteById(id);
         return "redirect:/room/find_all";
     }
+
 }

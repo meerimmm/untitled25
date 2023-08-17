@@ -4,19 +4,76 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body style="background-image: url(https://i8.photo.2gis.com/images/branch/32/4503599646196710_830f.jpg)">
+<body>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+<div class="jumbotron text-center" style="height: 300px">
+    <tr style="margin-bottom: 50px">
+        <th>
+            <img src="https://translator-school.com/storage/blogs/April2023/02-kak-stat-perevodchikom-filmov-i-serialov.jpg"
+                 class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px;">
+        </th>
+
+
+        <th><img
+                src="https://gai-news.ru/imagesgai/aHR0cHM6Ly9zdG9yYWdlLnlhbmRleGNsb3VkLm5ldC9pbmNydXNzaWEtcHJvZC93cC1jb250ZW50L3VwbG9hZHMvMjAyMi8wOC9pU3RvY2stMTg4MDA3Nzk0LmpwZw=="
+                class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px;"></th>
+
+
+        <th><img src="https://i7.photo.2gis.com/images/branch/47/6614661959256629_f3cd.jpg"
+                 class="img-rounded" alt="Cinque Terre" style="width: 250px; height: 150px; "></th>
+
+
+        <th><img
+                src="https://abrakadabra.fun/uploads/posts/2021-12/1639594132_30-abrakadabra-fun-p-zastavki-filmov-32.jpg"
+                class="img-rounded" alt="Cinque Terre" style="width: 200px; height: 130px; margin-bottom: 10px">
+        </th>
+
+        <th><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQykk-eJ-h9X1WBlq4a9Ffb_pTNUMUq9mKYrHoKQJXsFOILW0FToR-NaQ_R3KYL5rEOC70&usqp=CAU"
+                class="img-rounded" alt="Cinque Terre" style="width: 150px; height: 100px">
+        </th>
+
+<!--        <meta charset="utf-8">-->
+<!--        <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">-->
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>-->
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<!--        </head>-->
+<!--        <body>-->
+
+<!--        <div class="container">-->
+<!--            <h2>Justified Button Groups</h2>-->
+<!--            <p>To span the entire width of the screen, use the .btn-group-justified class:</p>-->
+<!--            <div class="btn-group btn-group-justified">-->
+<!--                <a th:href="@{/room/find_all}" class="btn btn-primary">ROOM</a>-->
+<!--                <a th:href="@{/movie/find_all}" class="btn btn-primary">MOVIE</a>-->
+<!--                <a th:href="@{/session/find_all}" class="btn btn-primary">SESSION</a>-->
+<!--                <a th:href="@{/place/find_all}" class="btn btn-primary">PLACE</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </body>-->
+    </tr>
+
+    <!--    <div class="btn-group" style="margin-left: 300px">-->
+    <!--        <button type="button" class="btn btn-default" th:href="@{/cinema/find_all}"><strong>AllCinemas</strong></button>-->
+    <!--        <button type="button" class="btn btn-default" th:href="@{/movie/find_all}"><strong>AllMovies</strong></button>-->
+    <!--        <button type="button" class="btn btn-default" th:href="@{/session/find_all}"><strong>AllSessions</strong>-->
+    <!--        </button>-->
+
+    <!--    </div>-->
+
+    <a th:href="@{/cinema/find_all}"><h2> CINEMA</h2></a>
+</div>
 <table class="table"
-       style="width: 500px; height: 300px; margin-top: 200px; margin-left: 300px">
+       style="width: 500px; height: 300px; margin-top: 3px; margin-left: 100px">
 
     <thead>
     <tr>
         <th scope="col">ID</th>
         <th scope="col">NAME</th>
-        <th scope="col">SESSIONS</th>
-        <th scope="col">PLACES</th>
         <th scope="col">RATING</th>
-
+<!--        <th scope="col">SESSIONS</th>-->
+<!--        <th scope="col">PLACES</th>-->
         <th scope="col"><b style="color: darkblue"><a th:href="@{/room/save}"> ADD ROOM</a> </b></th>
     </tr>
     <tr th:each="room:${all_rooms}">
@@ -36,14 +93,19 @@
             </a>
 
         </td>
+<!--        <td>-->
+<!--            <a th:href="@{/session/find_by_id/{id}(id=${room.getId()})}">-->
+<!--                <button type="button" class="btn btn-warning">Session</button>-->
+<!--            </a>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <a th:href="@{/place/find_by_id/{id}(id=${room.getId()})}">-->
+<!--                <button type="button" class="btn btn-warning">Place</button>-->
+<!--            </a>-->
+<!--        </td>-->
         <td>
-            <a th:href="@{/session/find_by_id/{ id}(id=${room.getId()})}">
-                <button type="button" class="btn btn-warning">Session</button>
-            </a>
-        </td>
-        <td>
-            <a th:href="@{/place/find_by_id/{ id}(id=${room.getId()})}">
-                <button type="button" class="btn btn-warning">Place</button>
+            <a th:href="@{/movie/find_all}">
+                <button type="button" class="btn btn-warning">Movie</button>
             </a>
         </td>
 
@@ -69,5 +131,7 @@
     <!--        <td>@twitter</td>-->
     <!--    </tr>-->
     <!--    </tbody>-->
+    </tbody>
+</div>
 </table>
 </body>

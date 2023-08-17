@@ -6,6 +6,7 @@ import jakarta.servlet.ServletContext;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import peaksoft.model.Movie;
+import peaksoft.model.Session;
 import peaksoft.service.ServiceLayer;
 
 import java.util.List;
@@ -48,6 +49,10 @@ public class MovieServiceImpl implements ServiceLayer<Movie> {
     @Override
     public void deleteById(int id) {
         entityManager.remove(entityManager.find(Movie.class, id));
+    }
+    public List<Movie> findAllId(int id) {
+        return entityManager.createQuery("select s from Movie s join s.sessions r where r.id = :id", Movie.class)
+                .setParameter("id", id).getResultList();
     }
 
 }

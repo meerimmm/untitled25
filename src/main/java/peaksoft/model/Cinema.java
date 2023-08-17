@@ -1,7 +1,6 @@
 package peaksoft.model;
 
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,8 +19,12 @@ public class Cinema {
     private int id;
     private String name;
     private String address;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cinema")
+    @OneToMany(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH,
+            CascadeType.REMOVE,
+            CascadeType.DETACH}, mappedBy = "cinema")
     private List<Room> rooms;
-
 }
 

@@ -5,6 +5,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 import peaksoft.model.Place;
+import peaksoft.model.Room;
 import peaksoft.service.ServiceLayer;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class PlaceServiceImpl implements ServiceLayer<Place> {
 
     @Override
     public Place save(Place place) {
+        Room room = entityManager.find(Room.class,place.getRoomId());
+        place.setRoom(room);
         entityManager.persist(place);
         return place;
     }
@@ -29,14 +32,14 @@ public class PlaceServiceImpl implements ServiceLayer<Place> {
 
     @Override
     public List<Place> findAll() {
-        return (List<Place>) entityManager.createQuery("from Place").getResultList();
+        return (List<Place>) entityManager.createQuery("from Place ").getResultList();
     }
 
     @Override
     public Place update(int id, Place place) {
         Place place1 = entityManager.find(Place.class, id);
-        place1.setX(place.getX());
-        place1.setY(place.getY());
+        place1.setRow(place.getRow());
+        place1.setPlace(place.getPlace());
         place1.setPrice(place.getPrice());
         place1.setRoom(place.getRoom());
         entityManager.merge(place1);
@@ -47,5 +50,10 @@ public class PlaceServiceImpl implements ServiceLayer<Place> {
     public void deleteById(int id) {
         entityManager.remove(entityManager.find(Place.class, id));
     }
+    public List<Place>findAll(int id){
+        return entityManager.createQuery("from Place r where r.room.id =:id", Place.class)
+                .setParameter("id", id).getResultList();
+    }
+
 
 }

@@ -8,6 +8,7 @@ import peaksoft.model.Cinema;
 import peaksoft.service.ServiceLayer;
 
 import java.util.List;
+
 @Service
 @Transactional
 public class CinemaServiceImpl implements ServiceLayer<Cinema> {

@@ -8,7 +8,6 @@ import peaksoft.model.Cinema;
 import peaksoft.model.Room;
 import peaksoft.service.ServiceLayer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -19,7 +18,7 @@ public class RoomServiceImpl implements ServiceLayer<Room> {
 
     @Override
     public Room save(Room room) {
-        Cinema cinema = entityManager.find(Cinema.class,room.getCinemaId());
+        Cinema cinema = entityManager.find(Cinema.class, room.getCinemaId());
         room.setCinema(cinema);
         entityManager.persist(room);
         return room;
@@ -33,6 +32,12 @@ public class RoomServiceImpl implements ServiceLayer<Room> {
     @Override
     public List<Room> findAll() {
         return (List<Room>) entityManager.createQuery("from Room").getResultList();
+    }
+
+    public List<Room> findAllId(int id) {
+        return entityManager.createQuery
+                        ("from Room r where r.cinema.id =:id", Room.class)
+                .setParameter("id", id).getResultList();
     }
 
     @Override
@@ -50,5 +55,11 @@ public class RoomServiceImpl implements ServiceLayer<Room> {
     public void deleteById(int id) {
         entityManager.remove(entityManager.find(Room.class, id));
     }
+
+//    public List<Room>findAll(int id){
+//        return entityManager.createQuery("from Room r where r.cinema.id =:id", Room.class)
+//                .setParameter("id", id).getResultList();
+//    }
+
 
 }
